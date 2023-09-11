@@ -1,4 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const StyledDiv = styled.div`
+  color: blue;
+  font-size: 24px;
+`;
 
 export default function Root(props) {
   const handleClick = (e) => {
@@ -24,9 +30,9 @@ export default function Root(props) {
   }, []);
 
   return (
-    <section>
+    <StyledDiv>
       <h1>{props.name} is mounted with events!</h1>
       <button onClick={handleClick}>Click me</button>
-    </section>
+    </StyledDiv>
   );
 }
