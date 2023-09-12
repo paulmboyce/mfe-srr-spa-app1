@@ -1,14 +1,13 @@
 {
   "name": "@pmat-org/app1",
   "scripts": {
-    "start:spa:integrated": "webpack serve --port 3000",
+    "start:spa": "webpack serve --port 3010",
     "start:spa:standalone": "webpack serve --port 3000 --env standalone",
     "ssr:server:babel:build": "babel src -d server-build -w",
-    "ssr:server:start:dev": "PORT=3000 nodemon ./server-build/server/react-server-ssr.js",
-    "start:ssr:dev": "concurrently 'npm:ssr:server:babel:build' 'npx wait-on ./server-build && npm run ssr:server:start:dev' 'npm:watch:webpack'",
+    "ssr:server:start:dev": "PORT=3011 nodemon ./server-build/server/react-server-ssr.js",
+    "start:ssr:dev": "concurrently 'npm:ssr:server:babel:build' 'npx wait-on ./server-build && npm run ssr:server:start:dev' 'npm:start:spa'",
     "build": "concurrently npm:build:*",
     "build:webpack": "webpack --mode=production",
-    "watch:webpack": "webpack --mode=production --watch",
     "analyze": "webpack --mode=production --env analyze",
     "lint": "eslint src --ext js",
     "format": "prettier --write .",
