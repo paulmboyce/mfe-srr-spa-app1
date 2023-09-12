@@ -1,8 +1,9 @@
 /* eslint-disable no-console */
-require("@babel/register");
+//require("@babel/register");
 const express = require("express");
 const React = require("react");
-import Root from "../root.component"; // Import your main React component
+import Root from "../root.component"; // Import your main React component.//Single-Spa apps provide a Root component by default.
+
 const {
   renderToString,
   renderToStaticNodeStream,
